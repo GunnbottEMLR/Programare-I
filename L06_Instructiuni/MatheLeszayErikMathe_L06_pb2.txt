@@ -1,0 +1,23 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <math.h>
+void main() {
+
+	int a, b;
+	float c, d;
+	printf("Screti un numar care este patrat perfect:");// un patrat perfect este mereu un numar intreg si acest cod verifica asta
+	scanf("%i", &a);
+
+	c = sqrt(a);
+	c = static_cast<int> (c);
+	
+	d = c * c;
+
+	if (d == a) {
+		printf("Numarul este patrat perfect");
+	}
+	else {
+		printf("Numarul nu este patrat perfect");
+	}
+
+}

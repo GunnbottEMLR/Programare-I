@@ -1,0 +1,36 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <math.h>
+void main() {
+    int nr;
+    int cat;
+    int r;
+    int z;
+    z = 0;
+
+    printf("Introduceti un nr intreg:");
+    scanf("%i", &nr);
+    cat = nr / 2;
+ 
+
+    while (cat != 0) {
+
+
+        r = nr % 2;
+        if (r == 0) {
+            z++;
+          
+        }
+        nr = cat;
+
+        cat = nr / 2;
+    }
+    r = nr % 2;
+    if (r == 0) {
+        z++;
+        
+    }
+    printf("%i", z);
+
+
+}

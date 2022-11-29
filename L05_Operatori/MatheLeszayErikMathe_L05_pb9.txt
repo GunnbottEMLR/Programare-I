@@ -1,0 +1,20 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <math.h>
+#include <iostream>
+void main() {
+	
+	int x, y;
+	float Ac;
+	int Ad;
+
+	printf("Introduceti 2 numere intregi:");
+	scanf("%i %i", &x, &y);
+
+	double pi = 2 * acos(0.0);
+	Ac = pi * x;
+	Ad = x * y;
+	printf("Aria cercului este: %f\n", Ac);
+
+	printf("Aria dreptunghiului este: %i", Ad);
+}

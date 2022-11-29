@@ -1,0 +1,25 @@
+
+
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+float serie(float a, float b) {
+
+
+        return ((a * b) / (a + b));
+
+}
+float paralel(float a, float b) {
+
+
+        return (a + b);
+
+}
+int main() {
+        float C1, C2;
+        
+        printf("Scrieti un C1 si un C2:");
+        scanf("%f %f", &C1, &C2);
+                printf("Capacitatea echivalenta in serie: %-50.4f F\n", serie(C1, C2));
+                printf("Capacitatea echivalenta in paralel: %-50.4f F\n", paralel(C1, C2));
+}

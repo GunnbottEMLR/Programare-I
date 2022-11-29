@@ -1,0 +1,14 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <math.h>
+#include <iostream>
+void main() {
+	
+	int x;
+	
+
+	printf("Introduceti 1 numer intreg:");
+	scanf("%i", &x);
+	
+	printf("Se afiseaza in format zecimal valoarea fiecarui octet al intregului citit : %d", x);
+}

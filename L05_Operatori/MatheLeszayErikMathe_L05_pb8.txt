@@ -1,0 +1,17 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <math.h>
+#include <iostream>
+void main() {
+	char a, b, c, d, e, f;
+	int x;
+
+
+	printf("Introduceti 6 caractere mici:");
+	scanf("%c %c %c %c %c %c", &a, &b, &c, &d, &e, &f);
+	x = 32;
+
+	printf("Caracterele ca litere mari printro operatie aritmetica: %c %c %c %c %c %c\n", a - x, b - x, c - x, d - x, e - x, f - x);
+
+	printf("Caracterele ca litere mari printro operatie logica si mascare: %c %c %c %c %c %c", a ^ x, b ^ x, c ^ x, d ^ x, e ^ x, f ^ x);
+}

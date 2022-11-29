@@ -1,0 +1,28 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <math.h>
+#define pi 3.1415926535
+double lung(int e) {
+
+
+	return (2 * pi * e);
+
+}
+double aria(int e) {
+
+
+	return (pi * e * e);
+
+}
+
+void main() {
+	int r;
+
+	
+	printf("Scrieti raza unui cerc (numar intreg): ");
+	scanf("%i", &r);
+
+	printf("Lungimea cercului este %.10lf\n", lung(r));
+	printf("Aria cercului este %.10lf", aria(r));
+
+}

@@ -1,0 +1,34 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <math.h>
+float durata(float v1, float v2) {
+	v1 = (v1 / 60) / 60;
+	v2 = (v2 / 60) / 60;
+	float v, m, s;
+	v = v1 + v2;
+	s = 1;
+	while (v < 100.0) {
+		s = s + 1;
+		v = v + v1 + v2;
+	}
+	m = s / 60 + 0.0;
+
+	return (m);
+
+}
+
+
+void main() {
+	float v1, v2;
+
+
+	printf("Scrieti viteza cu care se deplaseaza prima masina in km/h: ");//e mai buna pentru ca daca da cu virgula stii ca astepti minutele alea plus cateva secunde
+	scanf("%f", &v1);
+
+	printf("Scrieti viteza cu care se deplaseaza a doua masina in km/h: ");
+	scanf("%f", &v2);
+
+	printf("Masinile se intalnesc la %.2f minute", durata(v1, v2));
+
+
+}

@@ -1,0 +1,34 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <math.h>
+void main() {
+    unsigned char a;
+    unsigned char b;
+
+    printf("Introduceti un caracter unsigned:");
+    scanf("%c", &a);
+    b = a % 2;
+    printf("Valorile bitilor: %i", b);//    >> %
+    a = a >> 1;
+    b = a % 2;
+    printf("%i", b);
+    a = a >> 1;
+    b = a % 2;
+    printf("%i", b);
+    a = a >> 1;
+    b = a % 2;
+    printf("%i", b);
+    a = a >> 1;
+    b = a % 2;
+    printf("%i", b);
+    a = a >> 1;
+    b = a % 2;
+    printf("%i", b);
+    a = a >> 1;
+    b = a % 2;
+    printf("%i", b);
+    a = a >> 1;
+    b = a % 2;
+    printf("%i", b);
+
+}

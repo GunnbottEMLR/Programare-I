@@ -1,0 +1,17 @@
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream> 
+#include <algorithm>  
+using namespace std;
+
+int main() {
+        char a[100];
+
+        printf("Scrieti 4 numere intregi si 4 reale (ordinea):");
+        scanf("%s/n", &a);
+
+        string str = a;
+
+        reverse(str.begin(), str.end());
+        cout << str << endl;
+}

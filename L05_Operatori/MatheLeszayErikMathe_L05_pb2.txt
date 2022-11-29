@@ -1,0 +1,14 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <math.h>
+void main() {
+    int a;
+    int b;
+    int c;
+    float x;
+   
+    printf("Introduceti laturile triunghiului ca nr intreg:");
+    scanf("%i %i %i", &a, &b, &c);
+    x = (a + b + c) / 2.0;
+    printf("Aria triughiului este: %f" , sqrt(x * (x - a) * (x - b) * (x - c)));
+}

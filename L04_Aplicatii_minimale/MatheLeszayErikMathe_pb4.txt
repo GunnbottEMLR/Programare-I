@@ -1,0 +1,14 @@
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+void main() {
+    int a;
+    int b;
+    int c;
+ 
+
+    printf("Introduceti 3 caractere:");
+    scanf("%c %c %c", &a, &b, &c);
+    printf(" afiseaza apoi pe o singura linie separate prin caracterul punct.: %c.%c.%c", a, b, c);
+
+}

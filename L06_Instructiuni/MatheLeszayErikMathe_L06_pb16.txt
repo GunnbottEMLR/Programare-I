@@ -1,0 +1,34 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <math.h>
+#include <conio.h>
+
+
+void main() {
+
+	float a[100], b;
+	int k, n, x, m;
+	printf("Scrieti numere intregi si cand vreti sa aflati media aritmetica a numerelor impare pozitive apasati tasta <ESC>:");
+	
+	k = 0;
+	x = 0;
+	m = n = 0;// ca sa poata intra in scanf si sa faca loopol
+	m = _getch();
+	while (m != 27) {
+
+		scanf("%i", &n);
+		m = n;
+		m = _getch();
+		if ((n % 2) != 0 && n>0) {
+			k = k + n;
+			x++;
+
+		}
+		
+	}
+	printf("k= %i\n x= %i\n", k, x);
+	printf("\nMedia aritmetica este= %f", (k / (x+0.0)));//media aritmetica poate sa dea cu virgula deci alegem float
+
+
+
+}

@@ -1,0 +1,22 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <math.h>
+void main() {
+
+	int n, m, x;
+	printf("Screti doua numere intregi:");
+	scanf("%i %i", &n, &m);
+	if (n > m) {
+		x = m;//cel mai mic dintre el sa fie impartitorul
+	}
+	else {
+		x = n;// daca n e mai mic sau daca sunt egale oricare se poate lua deci e okay
+	}
+
+	while (((m % x) || (n % x)) == 1) {
+
+		x = x - 1;
+	}
+	printf("Cel mai mare divizor comun este: %i", x);
+
+}

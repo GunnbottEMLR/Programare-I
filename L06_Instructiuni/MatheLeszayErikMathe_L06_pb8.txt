@@ -1,0 +1,17 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <math.h>
+void main() {
+
+	
+	int n, m;
+	printf("Scrieti 2 numere intregi:");
+	scanf("%i %i", &n, &m);
+	int k = 0;
+	while ((n % m)!=0) {
+		n--;
+		k++;
+	}
+	
+	printf("Catul impartirii a primului numar cu al doilea este: %i", k);
+}

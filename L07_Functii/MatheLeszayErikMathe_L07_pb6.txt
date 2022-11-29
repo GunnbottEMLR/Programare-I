@@ -1,0 +1,31 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <math.h>
+
+float ip(float e, float r, float i) {
+
+
+	return ((e + r + i) / 3.0);
+
+}
+
+
+void main() {
+	float n1, n2, n3, n4, n5, n6;
+	char a[100], b[100];
+
+	printf("Scrieti numele primului student: ");
+	gets_s(a);
+	printf("Scrieti notele acestuia la programare (laborator, teoretic, practic): ");
+	scanf("%f %f %f", &n1, &n2, &n3);
+
+	printf("Scrieti numele al doilea student: ");
+	gets_s(b);
+	gets_s(b);//trebuie 2 gets_s(b) altfel da complicatii nush dc
+	printf("Scrieti notele acestuia la programare (laborator, teoretic, practic): ");
+	scanf("%f %f %f", &n4, &n5, &n6);
+
+	printf("%5.20s : %.2f\n", a, ip(n1, n2, n3));
+	printf("%5.20s : %.2f", b, ip(n4, n5, n6));
+
+}

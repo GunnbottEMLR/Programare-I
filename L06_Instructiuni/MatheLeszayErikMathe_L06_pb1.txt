@@ -1,0 +1,19 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <math.h>
+void main() {
+
+	float a, b, c, d;
+	
+	printf("Screti laturile dreptunghiului si diagonala:");
+	scanf("%f %f %f", &a, &b, &c);
+		printf("Aria este:%f\n", a*b);
+		d = sqrt(a * a + b * b);
+		if (d == c) {
+			printf("Diagonala introdusa este diagonala dreptunghiului formata de laturile introduse");
+		}
+		else {
+			printf("Diagonala introdusa nu este diagonala dreptunghiului formata de laturile introduse");
+		}
+		
+}

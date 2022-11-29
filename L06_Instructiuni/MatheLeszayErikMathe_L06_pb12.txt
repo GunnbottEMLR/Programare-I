@@ -1,0 +1,25 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <math.h>
+void main() {
+
+	float a[100], b;
+	int k, n, x;
+	printf("Scrieti 1 numar intreg:");
+	scanf("%i", &n);
+	n = static_cast<float> (n);
+	printf("Scrieti numere reale pana cand suma lor depeseste numarul intreg:");
+	k = 0;
+	scanf("%f", &a[k]);
+	b = a[k];
+	x = 1;
+	while (b <= n) {
+		k++;//merge si fara k++ pentru ca schimbi valoare la a[0] cred eu ca de aia
+		scanf("%f", &a[k]);
+		b = b + a[k];
+		x++;
+	}
+
+	printf("Suma numerelor reale este %.2f si ele sunt %i numere", b, x);
+
+}

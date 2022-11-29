@@ -1,0 +1,19 @@
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+void main() {
+    char a;
+    char a1;
+    char a2;
+    char a3;
+    int a4;
+   int a5;
+    char a6;
+    char a7;
+    char a8;
+
+    printf("Eu am X ani:");
+    scanf("%c %c %c %c %i %i %c %c %c", &a, &a1, &a2, &a3, &a4, &a5, &a6, &a7, &a8);
+    printf(" X: %i", a4, a5);
+
+}

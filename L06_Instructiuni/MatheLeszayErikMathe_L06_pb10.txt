@@ -1,0 +1,19 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <math.h>
+void main() {
+
+	int n, m, x;
+	printf("Screti un numar intreg:");
+	scanf("%i", &n);
+	m = 1;
+	x = 0;
+	while ((n / m )!= 0) {
+
+		m = m * 10;
+		x = x + 1;
+	}
+	
+	printf("Numarul de cifre din numar este: %i", x);
+
+}

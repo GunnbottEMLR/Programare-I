@@ -1,0 +1,50 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <math.h>
+int duratam(int cm, int bm) {
+	int m;
+	m = bm - cm;
+	while (m < 0)
+	{
+		m = 60 + m;
+	}
+
+
+
+	return (m);
+
+}
+int duratao(int co, int cm, int bo, int bm) {
+	int o, m;
+	m = bm - cm;
+	o = 0;
+	while (m < 0)
+	{
+		m = 60 + m;
+		o = o - 1;
+	}
+	if (co < bo) {
+		o = o - co + bo;
+	}
+	else {
+		o = o - co + bo + 24;
+	}
+	return (o);
+
+}
+
+
+void main() {
+	int co, cm, bo, bm;
+
+	printf("Scrieti in intervalul de ore 1-24 nu folositi 12am/12pm\n");
+	printf("Scrieti ora si minutul la care trenul porneste din Cluj: ");
+	scanf("%i %i", &co, &cm);
+
+	printf("Scrieti ora si minutul la care trenul ajunge in Brasov: ");
+	scanf("%i %i", &bo, &bm);
+
+	printf("Durata calatoriei este %i ore si %i minute", duratao(co, cm, bo, bm), duratam(cm, bm));
+
+
+}

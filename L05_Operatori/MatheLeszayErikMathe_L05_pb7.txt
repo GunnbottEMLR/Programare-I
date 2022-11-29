@@ -1,0 +1,40 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <math.h>
+#include <iostream>
+void main() {
+	float a, b, c, d, e, f;
+	int m, n, p, q, min;
+
+
+	printf("Introduceti doua numere reale a si b:");
+	scanf("%f %f", &a, &b);
+	c = a + b;
+	d = a - b;
+	e = a * b;
+	f = a / b;
+
+	printf(" a + b=%f\n a - b=%f\n a * b=%f\n a / b=%f \n", c, d, e, f);
+	
+	m=static_cast<int> (c+0.5);
+	n = static_cast<int> (d + 0.5);
+	p = static_cast<int> (e + 0.5);
+	q = static_cast<int> (f + 0.5);
+	if (m < n) {
+		min = m;
+	}
+	else { min = n; }
+	if (p < min) {
+		min = p;
+
+	}
+	else { min = min; }
+	if (q < min) {
+		min = q;
+
+	}
+	else {
+		min = min;
+	}
+	printf("Valoarea minima dintre ele ca valori intregi: %i", min);
+}

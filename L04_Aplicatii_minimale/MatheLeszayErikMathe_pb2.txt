@@ -1,0 +1,12 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <math.h>
+void main() {
+        int a;
+        int b;
+
+        printf("Introduceti 2 numere intregi:");
+        scanf("%i %i", &a, &b);
+
+        printf("Suma geometrica: %f", sqrt(a * b));
+}

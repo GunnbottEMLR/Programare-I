@@ -1,0 +1,40 @@
+
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+float seriec(float a, float b) {
+
+
+        return ((a * b) / (a + b));
+
+}
+float paralelc(float a, float b) {
+
+
+        return (a + b);
+
+}
+float serier(float a, float b) {
+
+
+        return (a + b);
+
+}
+float paralelr(float a, float b) {
+
+
+        return ((a * b) / (a + b));
+
+}
+int main() {
+        float C1, C2, R1, R2;
+
+        printf("Scrieti un C1 si un C2:");
+        scanf("%f %f", &C1, &C2);
+        printf("Scrieti un R1 si un R2:");
+        scanf("%f %f", &R1, &R2);
+        printf("Capacitatea echivalenta in serie: %-50.4f F\n", seriec(C1, C2));
+        printf("Capacitatea echivalenta in paralel: %-50.4f F\n", paralelc(C1, C2));
+        printf("Rezisenta echivalenta in serie: %50.3f ohmi\n", serier(R1, R2));
+        printf("Rezisenta echivalenta in paralel: %50.3f ohmi\n", paralelr(R1, R2));
+}

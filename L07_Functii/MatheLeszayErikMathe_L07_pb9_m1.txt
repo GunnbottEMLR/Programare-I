@@ -1,0 +1,33 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <math.h>
+int durata(int v1, int v2) {
+
+	int m, v;
+	v = v1 + v2;
+	m = 1;
+	while (v < 100) {
+		m++;
+		v = v + v1 + v2;
+	}
+
+
+	return (m);
+
+}
+
+
+void main() {
+	int v1, v2;
+
+	
+	printf("Scrieti viteza cu care se deplaseaza prima masina in km/min: ");//pt ceva simplu dar eu cred ca metoda 2 este mai bn pentru ca da si cu virgula minute
+	scanf("%i", &v1);
+
+	printf("Scrieti viteza cu care se deplaseaza a doua masina in km/min: ");
+	scanf("%i", &v2);
+
+	printf("Masinile se intalnesc la %i minute", durata(v1, v2));
+
+
+}

@@ -1,0 +1,35 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <math.h>
+void main() {
+
+
+	int n[100], m, x, k, j;
+	printf("Scrieti n intreg :");
+	k = 0;
+	scanf("%i", &n[k]);
+
+	m = 0;
+	x = 0;
+	int i = 0;
+	while (m == x)
+	{
+		if (n[k] % 2 != 0) {
+			printf("Impare sunt:");
+			j = k;
+
+			while (i < (k + 1))
+			{
+				printf("%i ", n[k]);
+				k--;
+			}
+
+			k = j;
+			k++;
+		}
+		printf("\n");
+		scanf("%i", &n[k]);
+
+
+	}
+}

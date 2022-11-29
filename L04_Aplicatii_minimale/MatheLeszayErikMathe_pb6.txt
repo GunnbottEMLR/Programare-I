@@ -1,0 +1,12 @@
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+void main() {
+    float a;
+    float b;
+    float c;
+    a = 2.3;
+    b = 3.4;
+    c = 4.5;
+    printf("Ati introdus valorile: %f", (1 / a + 1 / b + 1 / c));
+}

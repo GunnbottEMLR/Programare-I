@@ -1,0 +1,103 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <math.h>
+#include <iostream>
+using namespace std;
+
+void main() {
+    int nr;//fara semn
+   
+
+    printf("Introduceti un nr intreg fara semn:");
+    scanf("%i", &nr);
+    printf("Numarul in zecimal este: %i\n", nr);
+    int nr1 = nr;
+    int nr2 = nr;
+        int raspuns = 0, p = 1;
+        while (nr > 0) {
+            int restCurent = nr % 2; //Cifra curentă, care este defapt restul împărțirii la 2
+            raspuns += p * restCurent; //Adăugăm cifra curentă la raspuns
+            p = p * 10; //Formăm puterea următoare
+            nr = nr / 2; //Îl înmulțim pe n la 2 pentru a găsi următoarele cifre
+        }
+
+        printf("Numarul in binar este:%i\n", raspuns);
+    
+    int raspuns1 = 0, p1 = 1;
+    while (nr1 > 0) {
+        int restCurent1 = nr1 % 8; // la fel ca mai sus
+        raspuns1 += p1 * restCurent1; 
+        p1 = p1 * 10; 
+        nr1 = nr1 / 8; 
+    }
+    printf("Numarul in octal este:%i\n", raspuns1);
+    char a, b, c, d, e, f;
+    a = 'A';
+    b = 'B';
+    c = 'C';
+    d = 'D';
+   e = 'E';
+    f = 'F';
+
+    int raspuns2 = 0, p2 = 1;
+    while (nr2 > 0) {
+        int restCurent2 = nr2 % 16;
+        if (restCurent2 < 10) {
+        raspuns2 += p2 * restCurent2;
+        p2 = p2 * 10;
+        nr2 = nr2 / 16;
+     }
+        else {
+            if (restCurent2 == 10) {
+                
+               char(restCurent2)=a;
+              
+                    raspuns2 += p2 * restCurent2;
+                p2 = p2 * 10;
+                nr2 = nr2 / 16;
+            }
+            if (restCurent2 == 11) {
+
+                char(restCurent2) = b;
+                raspuns2 += p2 * restCurent2;
+                p2 = p2 * 10;
+                nr2 = nr2 / 16;
+            }
+            if (restCurent2 == 12) {
+
+                char(restCurent2) = c;
+                raspuns2 += p2 * restCurent2;
+                p2 = p2 * 10;
+                nr2 = nr2 / 16;
+            }
+            if (restCurent2 == 13) {
+
+                char(restCurent2) = d;
+                raspuns2 += p2 * restCurent2;
+                p2 = p2 * 10;
+                nr2 = nr2 / 16;
+            }
+            if (restCurent2 == 14) {
+
+                char(restCurent2) = e;
+                raspuns2 += p2 * restCurent2;
+                p2 = p2 * 10;
+                nr2 = nr2 / 16;
+            }
+            if (restCurent2 == 15) {
+
+                char(restCurent2) = f;
+                raspuns2 += p2 * restCurent2;
+                p2 = p2 * 10;
+                nr2 = nr2 / 16;
+            }
+            int(restCurent2);
+
+
+
+
+
+        }
+    }
+    printf("Numarul in hexadecimal este:%i\n", raspuns2);
+}
