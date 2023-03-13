@@ -1,0 +1,4 @@
+Nota Test=6
+Nota Laborator=9.5
+Nota Examen=9.5
+Nota Finala=8
