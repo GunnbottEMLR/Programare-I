@@ -1,0 +1,67 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#define y 9
+int functie(int* a) {
+	int i = 1, * max, * min, j = 0;
+	min = a;
+	
+	while (i < 10) {
+		if (*min > *(a + i)) {
+			min = (a + i);
+
+		}
+		i++;
+	}
+	printf("valorile in ordine crescatoare sunt: %i", *min);
+
+	i = 0;
+	max = a;
+
+	while (i < 10) {
+		if (*max < *(a + i)) {
+			max = (a + i);
+
+		}
+		i++;
+	}
+	
+	*min = ( * max) + 1;
+	
+
+	while (j < 9) {//j=0
+		i = 1;
+		min = a;
+
+
+		while (i < 10) {
+			if (*min > *(a + i)) {
+				min =(a + i);
+
+			}
+			i++;
+		}
+		printf(" %i", *min);
+		*min = (*max) + 1;
+		j++;
+	}
+	return 0;
+}
+int main(void) {
+
+	int tab[y], x = 0;
+
+	printf("\nScrieti 10 numere reale intregi: ");
+
+	scanf("%i", &tab[x]);
+	while (x < 9)
+	{
+		x++;
+		scanf("%i", &tab[x]);
+	}
+	return functie(tab);
+
+
+
+
+}
+
