@@ -1,0 +1,21 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>
+int main(void) {
+        int d;
+        float n = 0.0;
+        printf("Scrieti cate numere reale vreti sa introduceti: ");
+        scanf("%d", &d);
+        float* p = (float*)malloc(d * sizeof(float));
+        printf("Scrieti %d numere reale : ", d);
+        for (int i = 0; i < d; i++) {
+                scanf("%f", (p + i));
+                if (*(p + i) < 0) {
+                        n = n + *(p + i);
+                }
+        }
+        printf("Suma numerelor negative este %f ", n);
+        
+                free(p);
+        
+}

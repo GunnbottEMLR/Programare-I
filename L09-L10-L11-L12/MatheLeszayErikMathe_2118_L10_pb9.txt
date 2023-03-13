@@ -1,0 +1,26 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int calcul(int* a) {
+    int y = 0,i=0;
+    while (a[i] != '\0') {
+        if (a[i] >= 8) {
+            y++;
+        }
+        i++;
+    }
+    return y-2;
+}
+int main()
+{
+    int y[30];
+    int x;
+        printf("Scrieti cati elevi din grupa sunt: ");
+        scanf("%i", &x);
+            for (int i = 0; i < x; i++)
+            {
+                printf("Scrieti media %i elev: ", i+1);
+                scanf("%i", &y[i]);
+            }
+            printf("Numarul de elevi cu media cel putin 8 este:%i", calcul(y));
+    
+}

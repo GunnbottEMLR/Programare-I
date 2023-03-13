@@ -1,0 +1,54 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+
+void citireTablou(int *A, int n) {
+  int i;
+  printf("Introduceti elementele tabloului:\n");
+  for (i = 0; i < n; i++) {
+    printf("A[%d] = ", i);
+    scanf("%d", A+i);
+  }
+}
+
+
+void completareTablou(int *A, int *B, int n) {
+  int i, sum = 0;
+  double medie;
+
+  
+  for (i = 0; i < n; i++) {
+    sum += A[i];
+  }
+  medie = (double)sum / n;
+
+  
+  for (i = 0; i < n; i++) {
+    B[i] = A[i] - (int)medie;
+  }
+}
+
+
+void afisareTablou(int *A, int n) {
+  int i;
+  printf("Elementele tabloului sunt:\n");
+  for (i = 0; i < n; i++) {
+    printf("%d ", A[i]);
+  }
+  printf("\n");
+}
+
+int main() {
+  int A[10], B[10], n;
+
+  printf("Introduceti numarul de elemente din tablou (maxim 10): ");
+  scanf("%d", &n);
+
+  citireTablou(A, n);
+  completareTablou(A, B, n);
+
+  afisareTablou(A, n);
+  afisareTablou(B, n);
+
+  return 0;
+}

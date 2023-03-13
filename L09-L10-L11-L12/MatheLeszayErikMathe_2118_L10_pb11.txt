@@ -1,0 +1,48 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int negative(int a[][100], int x) {
+    int k = 0;
+    for (int i = 0; i < x; i++)
+    {
+        for (int j = 0; j < x; j++)
+        {
+            if (a[i][j] < 0 && j<x) {
+                
+                    k++;
+                
+            }
+        }
+
+    }
+    return k;
+}
+int take() {
+    int x,a[100][100];
+    printf("Numarul de coloane trebuie sa fie acelasi cu nr de linii\nScrieti");
+    scanf("%i", &x);
+    if (x <= 0) {
+        printf("Numarul este negativ!!!");
+        return 0;
+    }
+    else {
+        printf("Scrieti numerele!\n");
+        for (int i = 0; i < x; i++)
+        {
+            for (int j = 0; j < x; j++)
+            {
+                printf("Rand %i Coloana %i:",i+1,j+1);
+                scanf("%i", &a[i][j]);
+            }
+
+        }
+    }
+    int k;
+    k = negative(a, x);
+    return k;
+}
+
+int main()
+{
+    int k = take();
+    printf("Numerele negative deasupra diagonale secundare sunt:%i ", k);
+}

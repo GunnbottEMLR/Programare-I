@@ -1,0 +1,26 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main(void) {
+	char** tab;
+	char a1[] = "Salut";
+	char a2[] = "Hey";
+	char a3[] = "Szio";
+	tab = (char**)malloc(3 * sizeof(char*));
+	for (int i = 0; i < 3; i++)
+	{
+		*(tab + i) = (char*)malloc(100 * sizeof(char));
+	}
+	*(tab+0) = _strdup(a1);
+	*(tab + 1) = _strdup(a2);
+	*(tab + 2) = _strdup(a3);//strdup zice ca ii in c++ asa ca am folosit _strdup
+	printf("%s\n", *(tab + 0));
+	printf("%s\n", *(tab + 1));
+	printf("%s\n", *(tab + 2));
+	for (int i = 0; i < 3; i++)
+	{
+		free(*(tab + i));
+	}
+	free(tab);
+}

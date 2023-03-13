@@ -1,0 +1,26 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <math.h>
+int main(void) {
+    int N;
+    float* f,n=0.0;
+    printf("\nDeterminati dimensiunea tabloului de numere reale: ");
+ scanf("%i", &N);
+ f = (float*)malloc(N * sizeof(float));
+ srand((unsigned)time(NULL));
+ for (int i = 0; i < N; i++)//aici nu am inteles punem numerele de la tastatura sau le punem de la rand()
+ {
+     *(f + i) = (float)rand() / (float)(RAND_MAX)*5.0;
+     n = n + *(f + i);
+ }
+ n = n / N;
+ // Mn = (sum(pow((xi - xmed), (1,2,3)) / N;  ???????????sum nu exista si xi , xmed ce sunt???
+     //luam pe xmed=n si xi ca primul numar din tabloul float
+ float Mn;
+ Mn = pow((*(f + 0) - n), 1) + pow((*(f + 0) - n), 2) + pow((*(f + 0) - n), 3);
+ printf("Media valorilor este %f si Mn este %f", n, Mn);
+ free(f);
+
+}

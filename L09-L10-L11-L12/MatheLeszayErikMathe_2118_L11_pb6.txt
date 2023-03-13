@@ -1,0 +1,58 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>
+int main(void) {
+    int m, n,**x;//n<7
+    printf("Scrieti cate linii va avea matricea: ");
+    scanf("%d", &m);
+    printf("Scrieti cate coloane va avea matricea: ");
+    scanf("%d", &n);
+    if (n >= 7) {
+        printf("Numarul coloanelor trebuie sa fie mai mic de 7!!");
+        return 0;
+    }
+    x = (int**)malloc(m * sizeof(int*));
+    for (int i = 0; i < m; i++)
+    {
+        *(x + i) = (int*)malloc(n * sizeof(int));
+    }
+    printf("Scrieti matricea!");
+    for (int i = 0; i < m; i++)
+    {
+        printf("\nLinia %i", i + 1);
+        for (int j = 0; j < n; j++)
+        {
+            printf("\nColoana %i: ", j + 1);
+            scanf("%i", &x[i][j]);
+        }
+
+    }
+    if (m != n) {
+        printf("m trebuie sa fie egal cu n pentru a face cu sarus(asa scrie in cerinta)!!!!");
+        for (int i = 0; i < m; i++)
+        {
+            free(*(x + i));
+        }
+        free(x);
+    }
+    else {
+        int determinant = 0;
+        for (int i = 0; i < n; i++) {
+            int diag1 = 1;
+            int diag2 = 1;
+            for (int j = 0; j < n; j++) {
+                diag1 *= x[j][(i + j) % n];
+                diag2 *= x[j][(n - 1 - i + j) % n];
+            }
+            determinant += diag1 - diag2;
+        }
+        printf("Determinantul matricii folosind sarus este: %i", determinant);
+
+        for (int i = 0; i < m; i++)
+        {
+            free(*(x + i));
+        }
+        free(x);
+    }
+    return 0;
+}

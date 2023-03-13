@@ -1,0 +1,52 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <time.h>
+int numar(char* x,int y) {
+    char k[100];
+    int m = 0,l=0,p=0;
+    for (int j = 0; j != y; j++)
+    {
+        if (x[j] != 0) {//
+            p = 0;
+            for (int i = j + 1; i != y; i++)
+            {
+                if (x[i] != 0) {//
+                    if (x[j] == x[i]) {
+                        k[m] = x[j];
+                        x[i] = 0;
+                        printf("\nCaracterul %c se repeta de ", k[m]);
+                        l++;
+                        p = 1;
+                    }
+                }
+            }
+            printf("%i", l+1);
+            l = 0;
+            if (p == 1) {
+                m++;
+            }
+        }
+        
+    }
+    
+
+    
+    return 0;
+}
+
+    int main(void) {
+        char a[100];
+        printf("Scrieti un sir de charactere: ");
+        gets_s(a);
+        int i = 0;
+        while (a[i]!= '\0') {
+            
+            i++;
+        }
+        
+        numar(a,i);
+        return 0;
+    }
+

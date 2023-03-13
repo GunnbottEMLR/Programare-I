@@ -1,0 +1,64 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <string.h>
+int sum(int a,int b) {
+    int suma;
+    suma = a + b;
+    return suma;
+}
+int main() {
+    int L, C, a[20][20], b[20][20],suma[20][20];
+    printf("\nIntroduceti numarule de Linii: ");
+    scanf("%i", &L);
+    if (L > 20) {
+        printf("\nDIMEANSIUNE PREA MARE");
+        return 0;
+    }
+    printf("\nIntroduceti numarule de Coloane: ");
+    scanf("%i", &C);
+    if (C > 20) {
+        printf("\nDIMEANSIUNE PREA MARE");
+        return 0;
+    }
+    printf("\nPrima matrice: ");
+    for (int i = 0; i < L; i++) {
+
+        for (int j = 0; j < C; j++) {
+            printf("\nLinia %i Coloana %i: ", i + 1,j+1);
+            scanf("%i", &a[i][j]);
+        }
+    }
+    printf("\nA doua matrice: ");
+    for (int i = 0; i < L; i++) {
+
+ 
+
+        for (int j = 0; j < C; j++) {
+            printf("\nLinia %i Coloana %i: ", i + 1, j + 1);
+            scanf("%i", &b[i][j]);
+        }
+    }
+
+    for (int i = 0; i < L; i++) {
+
+ 
+
+        for (int j = 0; j < C; j++) {
+
+            *(*(suma + i) + j) = sum((*(*(a + i) + j)), ( * (*(b + i) + j)));
+            printf("%i", *(*(suma + i) + j));
+        }
+    }
+
+    printf("\nElementele de la a doua diagonalei secundare a matricei suma este:");
+    for (int i = 0; i < L; i++) {
+
+ 
+
+        for (int j = 0; j < C; j++) {
+            if (i + j == L - 1) {
+                printf("\nLinia %i Coloana %i :Elementul este %i",i,j,suma[i][j]);
+            }
+        }
+    }
+}

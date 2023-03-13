@@ -1,0 +1,31 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+int main(void) {
+    int n,*x,*y, * tab = NULL;
+    printf("Scrieti cate numere intregi vreti sa scrieti: ");
+    scanf("%i", &n);
+    x = (int*)malloc(n * sizeof(int));
+    y= (int*)malloc(n * sizeof(int));
+    for (int i = 0; i < n; i++)
+    {
+        printf("Scrieti %i numar: ", i + 1);
+        scanf("%i",&(*(x + i)));
+        *(y + i) = sqrt(*(x + i));
+    }
+    printf("\nNumerele initiale sunt:                    ");
+    for (int i = 0; i < n; i++)
+    {
+        printf("%i ", *(x + i));
+        
+    }
+    printf("\nNumerele dupa extragerea radicalului este: ");
+    for (int i = 0; i < n; i++)
+    {
+        printf("%i ", *(y + i));
+
+    }
+free(x);
+free(y);
+}

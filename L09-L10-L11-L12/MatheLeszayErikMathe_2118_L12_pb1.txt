@@ -1,0 +1,52 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+struct date_student {
+        char nume[20];
+        char prenume[20];
+        char tara_de_origine[30];
+        int grupa;
+        int anul_nasterii;
+};
+
+void citire(struct date_student*); 
+void straini(struct date_student *ps,int N);
+int main(void)
+{
+        struct date_student s[100]; 
+        int i=0;
+        do {
+                citire(&s[i]);
+                i++;
+        } while (strcmp(s[i-1].nume,"AAA"));
+
+        straini(s, i-1);
+
+        
+}
+void citire(struct date_student* p)
+{
+        printf("\nNumele: ");
+        scanf("%s", p->nume);
+        printf("\nPrenumele: ");
+        scanf("%s", p->prenume);
+        printf("\nTara de origine: ");
+        scanf("%s", p->tara_de_origine);
+        printf("\nGrupa: ");
+        scanf("%d", &p->grupa);
+        printf("\nAnul nasterii: ");
+        scanf("%s", &p->anul_nasterii);
+
+}
+void straini(struct date_student* ps, int N)
+{
+        int nr_straini = 0;
+        for ( int i = 0; i < N; i++)
+        {
+                if (strcmp(ps[i].tara_de_origine, "RO") != 0) {
+                        nr_straini++;// (ps+i)->tara_de_origine;
+                }
+        }
+        printf("%i", nr_straini);
+}

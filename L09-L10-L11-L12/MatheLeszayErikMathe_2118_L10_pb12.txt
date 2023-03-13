@@ -1,0 +1,63 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int afis(int a[][10],int x) {
+    printf("\nMatricea este:");
+    for (int i = 0; i < x; i++)
+    {
+        printf("\n");
+        for (int j = 0; j < x; j++)
+        {
+            printf("%i ", a[i][j]);
+        }
+
+    }
+    return 0;
+}
+int interschimba(int b[][10], int x) {
+    int k;
+    for (int i = 0; i < 1; i++)
+    {
+        for (int j = 0; j < x; j++)
+        {
+            k = b[i][j];
+            b[i][j] = b[i + 1][j];
+            b[i + 1][j] = k;
+        }
+
+    }
+    return 0;
+}
+int matrice(int a[][10], int x) {
+    
+    
+        printf("Scrieti numerele!\n");
+        for (int i = 0; i < x; i++)
+        {
+            for (int j = 0; j < x; j++)
+            {
+                printf("Rand %i Coloana %i:",i+1,j+1);
+                scanf("%i", &a[i][j]);
+            }
+
+        }
+    
+    
+    
+    return 0;
+}
+
+int main()
+{   
+    int x,a[10][10];
+    printf("Numarul de coloane trebuie sa fie acelasi cu nr de linii\nScrieti");
+    scanf("%i", &x);
+    if (x > 2) {
+        matrice(a, x);
+        afis(a, x);
+        interschimba(a, x);
+        afis(a, x);
+    }
+    else {
+        printf("Matricea trebuie sa fie mai mare dacat 2!!!");
+    }
+}

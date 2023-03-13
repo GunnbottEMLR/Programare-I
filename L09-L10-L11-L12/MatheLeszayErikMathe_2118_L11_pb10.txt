@@ -1,0 +1,65 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>
+void afis(int** a, int n) {
+    printf("\nMatricea este: ");
+    for (int i = 0; i < n; i++)
+    {
+        printf("\n");
+        for (int j = 0; j < n; j++)
+        {
+            printf("%i ", (*(*(a + i) + j)));
+            
+        }
+    }
+    
+
+
+}
+int elemente(int **a,int n) {
+    int m=0;
+    for (int i = 0; i < n; i++)
+    {
+        
+        for (int j = 0; j < n; j++)
+        {
+            if (i - 1 == j && (*(*a + i) + j) >= 0 && ((*(*a + i) + j) % 2 == 0)) {
+                m = m + (*(*(a + i) + j));
+               
+            }
+        }
+    }
+    
+    return m;
+}
+int main(void) {
+    
+    int n,**x;
+    
+    printf("Scrieti dimensiunea matricei patratice");
+    scanf("%i", &n);
+    x = (int**)malloc(n * sizeof(int*));
+    for (int i = 0; i < n; i++)
+    {
+        *(x+i) = (int*)malloc(n * sizeof(int));
+    }
+    printf("Scrieti matricea:");
+    for (int i = 0; i < n; i++)
+    {
+        printf("\nLinia %i: ", i + 1);
+        for (int j = 0; j < n; j++)
+        {
+            printf("\nColoana %i: ", j + 1);
+            scanf("%i", &(*(*(x + i) + j)));
+        }
+    }
+   int m=elemente(x, n);
+
+   afis(x, n);
+   printf("\nSuma numerelor pozitive pare de sub diagonala principala este %i", m);
+for (int i = 0; i < n; i++)
+    {
+        free(*(x+i));
+    }
+free(x);
+ }

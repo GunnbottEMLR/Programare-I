@@ -1,0 +1,51 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <time.h>
+int elimina(float* x) {
+    int i=0,j=0,k=0,l=0,f=10;
+    float y = 0;
+    while (i < f) {
+        y = y + x[i];
+        i++;
+    }
+    y = y / (f+0.0);
+   
+    while (j < f) {
+        k = j;
+        
+        if (x[k] < y) {
+            while (k < f) {
+                l = k + 1;
+                x[k] = x[l];
+                k++;
+            }
+            f--;
+        }
+        if (x[k] > y) {
+            j++;
+        }
+    }
+
+
+    
+    return f;
+}
+
+    int main(void) {
+        int i=0,j=0;
+        float n[10];
+        printf("Scrieti 10 numere reale");
+        while (i < 10) {
+            scanf("%f", &n[i]);
+            i++;
+        }
+        int y=elimina(n);
+        printf("Numerele mai mari decat val medie sunt: ");
+        while (j < y) {
+            printf("%f", n[j]);
+            j++;
+        }
+        return 0;
+    }

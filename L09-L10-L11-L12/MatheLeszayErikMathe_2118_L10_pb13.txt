@@ -1,0 +1,66 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int intersect(int* a,int x1, int* b,int x2, int* d) {
+	int i = 0, j = 0,k=0;
+    while ((i !=  x1) && (j != x2)) {
+
+        if (a[i] > b[j]) {
+            d[k] = b[j];
+            j++;
+        }
+        else {
+            d[k] = a[i];
+            i++;
+        }
+        
+        k++;
+
+    }
+    while(j != x2) {
+        d[k] = b[j];
+        j++;
+        k++;
+    }
+    while (i != x2) {
+        d[k] = a[i];
+        i++;
+        k++;
+    }
+    return 0;
+}
+
+int main()
+{   
+    int x1,x2,a[10],b[10];
+    printf("Scrieti cate numere vreti sa scrieti in primul tablou nr<=10: ");
+    scanf("%i", &x1);
+    if (x1 > 10) {
+        printf("PREA MULTE NUMERE!");
+        return 0;
+    }
+    printf("Scrieti numerele: ");
+    for (int i = 0; i < x1; i++)
+    {
+        scanf("%i", &a[i]);
+    }
+
+    printf("Scrieti cate numere vreti sa scrieti in al doilea tablou nr<=10: ");
+    scanf("%i", &x2);
+    if (x2 > 10) {
+        printf("PREA MULTE NUMERE!");
+        return 0;
+    }
+    printf("Scrieti numerele: ");
+    for (int i = 0; i < x2; i++)
+    {
+        scanf("%i", &b[i]);
+    }
+    int d[30];
+    intersect(a, x1, b, x2,d);
+    printf("\nNumerele intersectate sunt: ");
+    for (int i = 0; i < (x1+x2); i++)
+    {
+        printf("%i ", d[i]);
+    }
+}

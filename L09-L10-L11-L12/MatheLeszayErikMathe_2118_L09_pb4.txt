@@ -1,0 +1,44 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <time.h>
+int elimina(int* x) {
+    int j = 0, i = 20, k = 0, y = 0;
+    while (j < i) {
+        if (x[j] % 2 != 0) {
+          
+             k = j;
+            while (k < i) {
+               y = k + 1;
+                
+                x[k] = x[y];
+                k++;
+            }
+            i--;
+            
+        }
+        if (x[j] % 2 == 0) {//deoarece numarul urm o sa fie nou x de j si ca sa-l verificam si pe el
+            j++;
+        }
+    }
+    return i;
+}
+
+    int main(void) {
+        int n = 20,a[20];
+        printf("\nTabloul initial este: ");
+        srand(time(0));
+        for (int i = 0; i < n; i++) {
+            a[i]=rand() % 50 ;
+            printf("%i ", a[i]);
+        }
+       int x= elimina(a);
+        int j = 0;
+        printf("\nTabloul initial fara numere impare este: ");
+        while (j<x) {
+            printf("%i ", a[j]);
+                j++;
+        }
+        return 0;
+    }

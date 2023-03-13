@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <string.h>
+int main() {
+	char a[20];
+		printf("\nScrieti un sir de charactere mai mare decat 7: ");
+		gets_s(a);
+		if (strlen(a) > 7) {
+			printf("\nCharacterul de pe pozitia 1 este %c", *(a + 1));
+			printf("\nCharacterul de pe pozitia 3 este %c", *(a + 3));
+			printf("\nCharacterul de pe pozitia 5 este %c", *(a + 5));
+			printf("\nCharacterul de pe pozitia 7 este %c", *(a + 7));
+		}
+		else {
+			printf("\nSirule nu este mai mare decat 7!");
+		}
+		
+}

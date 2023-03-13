@@ -1,0 +1,35 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <time.h>
+int main() {
+	char mi[] = "valoare prea mica";
+	char ma[] = "valoare prea mare";
+	char co[] = "valoare corecta";
+	int r, n;
+	srand(time(0));
+	r = rand() % 10;
+	char *a[3];
+	a[0] = &mi[0];
+	a[1] = &ma[0];
+	a[2] = &co[0];
+	printf("Scrieti un numar de la 0 la 9: ");
+	scanf("%i", &n);
+	while (1) {
+		if (n == r) {
+			printf("%s", a[2]);
+			return 0;
+		}
+		if (n > r) {
+			printf("%s", a[1]);
+			printf("\n Scrieti alt numar: ");
+			scanf("%i", &n);
+		}
+		if (n < r) {
+			printf("%s", a[0]);
+			printf("\n Scrieti alt numar: ");
+			scanf("%i", &n);
+		}
+	}
+}

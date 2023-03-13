@@ -1,0 +1,63 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>
+int cmpfunc(const void* a, const void* b) {
+    int* x = (int*)a;
+    int* y = (int*)b;
+    if (*x < *y) {
+        return -1;
+    }
+    else if (*x > *y) {
+        return 1;
+    }
+    else {
+        return 0;
+    }
+}
+int cmpfunc1(const void* a, const void* b) {
+    float* x = (float*)a;
+    float* y = (float*)b;
+    if (*x > *y) {
+        return -1;
+    }
+    else if (*x < *y) {
+        return 1;
+    }
+    else {
+        return 0;
+    }
+}
+int main()
+{   
+    int x[10];
+    float y[10];
+    printf("Scrieti 10 numere intregi: ");
+    for (int i = 0; i < 10; i++)
+    {
+        scanf("%i", &x[i]);
+
+    }
+    qsort(x, 10, sizeof(int), cmpfunc);
+    printf("Numerele ordonate crescator sunt: ");
+    for (int i = 0; i < 10; i++)
+    {
+        printf("%i ", x[i]);
+
+    }
+
+    ///////////////////////////////////////////////////////////
+
+    printf("Scrieti 10 numere float/reale: ");
+    for (int i = 0; i < 10; i++)
+    {
+        scanf("%f", &y[i]);
+
+    }
+    qsort(y, 10, sizeof(float), cmpfunc1);
+    printf("Numerele float/reale ordonate descrescator sunt: ");
+    for (int i = 0; i < 10; i++)
+    {
+        printf("%f ", y[i]);
+
+    }
+}

@@ -1,0 +1,34 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <math.h>
+int main(void) {
+    int* x, * tab = NULL;
+    
+ x = (int*)malloc(10000 * sizeof(int));
+ if ((tab = (int*)malloc(10000 * sizeof(int)))) {
+     for (int i = 0; i < 10000; i++)
+     {
+         *(x + i) = rand() % 101;
+     }
+     int maxcount = 0;
+     int element_having_max_freq;
+     for (int i = 0; i < 10000; i++) {
+         int count = 0;
+         for (int j = 0; j < 10000; j++) {
+             if (*(x + i) == *(x + j))
+                 count++;
+         }
+
+         if (count > maxcount) {
+             maxcount = count;
+             element_having_max_freq = *(x + i);
+         }
+     }
+     printf("Numarul care apare de cele mai multe ori este %i care apare de %i ori", element_having_max_freq, maxcount);
+ }
+ else {
+     printf("\nAlocare nereusita !");
+ }
+}

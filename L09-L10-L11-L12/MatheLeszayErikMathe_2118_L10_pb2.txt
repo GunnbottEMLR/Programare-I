@@ -1,0 +1,11 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main(int argc, char* argv[]) {
+	int i;
+	float suma = 0, produs = 0;
+	suma = atoi(argv[1]) + atoi(argv[2]) + atof(argv[3]) + atof(argv[4]);
+	produs = atoi(argv[1]) * atoi(argv[2]) * atof(argv[3]) * atof(argv[4]);
+		printf("\nSuma a doi parametri intregi si 2 flotanti din linia de comanda este %f", suma);
+		printf("\nProdusul a doi parametri intregi si 2 flotanti din linia de comanda este %f", produs);
+		
+}

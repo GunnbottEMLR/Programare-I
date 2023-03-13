@@ -1,0 +1,90 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+struct data_calend {
+	int ziua;
+	int luna;
+	int anul;
+};
+struct angajat {
+	char nume[20];
+	char prenume[20];
+	char ocupatia[20];
+	struct data_calend data_nasterii;
+	char sectia_in_care_lucreaza[20];
+};
+
+void citire(struct angajat* p)
+{
+	printf("\nNumele: ");
+	scanf("%s", p->nume);
+	printf("\nPrenumele: ");
+	scanf("%s", p->prenume);
+	printf("\nOcupatia: ");
+	scanf("%s", p->ocupatia);
+
+	printf("\nData nasterii: ");
+	printf("\nZiua: ");
+	scanf("%d", &(p->data_nasterii).ziua);
+	printf("\nLuna: ");
+	scanf("%d", &(p->data_nasterii).luna);
+	printf("\nAnul: ");
+	scanf("%d", &(p->data_nasterii).anul);
+
+	printf("\nSectia in care lucreaza: ");
+	scanf("%s", p->sectia_in_care_lucreaza);
+
+}
+void afis(struct angajat* p,int* x) {
+	if (x[0] == 0) {
+		printf("Nimeni nu este inginer!");
+	}
+	else {
+		int i = 0;
+		printf(">>>>>ANGAJATII INGINERI SUNT!!!<<<<<");
+		while (x[i] != 0) {
+			int k = x[i];
+			printf("\nNumele: ");
+			printf("%s", p[k].nume);
+			printf("\nPrenumele: ");
+			printf("%s", p[k].prenume);
+			printf("\nOcupatia: ");
+			printf("%s", p[k].ocupatia);
+
+			printf("\nData nasterii: ");
+			printf("\nZiua: ");
+			printf("%d", p[k].data_nasterii.ziua);
+			printf("\nLuna: ");
+			printf("%d", p[k].data_nasterii.luna);
+			printf("\nAnul: ");
+			printf("%d", p[k].data_nasterii.anul);
+
+			printf("\nSectia in care lucreaza: ");
+			printf("%s", p[k].sectia_in_care_lucreaza);
+			i++;
+		}
+	}
+}
+int main() {
+	int x[6];
+	struct angajat s[6];
+	int i = 1;
+	int j = 0;
+	printf("Scrieti date la 5 angajati: ");
+	while(i!=6){
+		citire(&s[i]);
+		if (strcmp(s[i].ocupatia ,"inginer")==0) {
+			x[j] = i;
+
+			j++;
+		}
+		i++;
+	} 
+	x[j] = 0;
+	afis(s, x);
+
+
+	return 0;
+}

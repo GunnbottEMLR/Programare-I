@@ -1,0 +1,32 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+
+struct punct {
+	int x;
+	int y;
+};
+
+struct punct adunare(int x1, int y1, int x2, int y2) {
+	int x = x1 + x2;
+	int y = y1 + y2;
+
+	struct punct p;
+	p.x = x;
+	p.y = y;
+	return p;
+}
+
+int main() {
+	int x1, y1, x2, y2;
+	printf("Introduceti valorile pentru x1 si y1: ");
+	scanf("%d%d", &x1, &y1);
+	printf("Introduceti valorile pentru x2 si y2: ");
+	scanf("%d%d", &x2, &y2);
+
+	struct punct p = adunare(x1, y1, x2, y2);
+
+	printf("Rezultatul adunarii: (%d, %d)\n", p.x, p.y);
+
+	return 0;
+}

@@ -1,0 +1,30 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+
+int main() {
+	int x;
+	char a[20][20];
+	char c[20];
+	char* b[20];
+	printf("\nScrieti cate mesaje vreti sa puneti: ");
+	scanf("%i", &x);
+	gets_s(c);//da eroare la primul mesaj daca nu e asta aici,nu merge gets aici dar merge restul codului
+	fflush(stdin);
+	for (int i = 0; i < x; i++) {
+		fflush(stdin);
+		printf("\nScrieti mesajul %i: ", i + 1);
+		fflush(stdin);
+		
+		fgets(a[i], sizeof(a[i]), stdin);
+		printf("\n%s", a[i]);
+		
+	}
+	printf("\nMesajele sunt: ");
+	for (int i = 0; i < x; i++) {
+
+		printf("\n%s", a[i]);
+
+	}
+
+}

@@ -1,0 +1,78 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>
+
+void scan(int** x,int l,int c,int y) {
+	printf("\n%i matrice:", y);
+	for(int i = 0; i < l; i++)
+	{
+		printf("\nLinia %i\t", i + 1);
+		for (int j = 0; j < c; j++) {
+			printf("\nColoana %i:",j+1);
+			scanf("%i", &(*(*(x + i) + j)));
+		
+		}
+	}
+	
+
+
+
+}
+void suma(int ** x1,int **x2,int **x3,int l,int c){
+	for (int i = 0; i < l; i++)
+	{
+		
+		for (int j = 0; j < c; j++) {
+			
+			(*(*(x3 + i) + j)) = (*(*(x1 + i) + j)) + (*(*(x2 + i) + j));
+
+		}
+	}
+	
+}
+void afis(int** x,int l,int c) {
+	for (int i = 0; i < l; i++)
+	{
+		printf("\n", i + 1);
+		for (int j = 0; j < c; j++) {
+			printf("%i ", (*(*(x + i) + j)));
+			
+
+		}
+	}
+}
+int main(void) {
+	int l, c,**m1,**m2,**m3;
+	printf("\nCate linii vreti sa aibe matricea?");
+	scanf("%i", &l);
+	printf("\nCate coloane vreti sa aibe matricea?");
+	scanf("%i", &c);
+	
+	m1 = (int**)malloc(l * sizeof(int*));
+	for (int i = 0; i < l; i++) {
+
+
+		*(m1 + i) = (int*)malloc(c * sizeof(int));
+	}
+	m2 = (int**)malloc(l * sizeof(int*));
+	for (int i = 0; i < l; i++) {
+
+
+		*(m2 + i) = (int*)malloc(c * sizeof(int));
+	}
+	m3 = (int**)malloc(l * sizeof(int*));
+	for (int i = 0; i < l; i++) {
+
+
+		*(m3 + i) = (int*)malloc(c * sizeof(int));
+	}
+	scan(m1,l,c,1);
+	scan(m2,l,c,2);
+	suma(m1, m2,m3,l,c);
+	printf("\nPrima matrice:");
+	afis(m1, l, c);
+	printf("\nA doua matrice:");
+	afis(m2, l, c);
+	printf("\nMatricea suma:");
+	afis(m3, l, c);
+}

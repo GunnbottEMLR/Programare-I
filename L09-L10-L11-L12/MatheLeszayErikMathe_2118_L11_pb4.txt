@@ -1,0 +1,37 @@
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(void) {
+    int n,j;
+    char** a,b[100];
+    printf("\nCate siruri de caractere vreti sa srieti?");
+    scanf("%i", &n);
+    printf("\nScrieti sirurile:");
+    gets_s(b);//mereu la gets am observat ca primul gets nu functioneaza, de aia am pus asta aici ca sa functioneze primul sir din for;
+    a = (char**)malloc(n * sizeof(char*));
+    for (int i = 0; i < n; i++)
+    {
+        *(a + i) = (char*)malloc(100 * sizeof(char));
+        printf("\nSirul %i este:", i + 1);
+        gets_s(b);
+        fflush(stdin);
+        j = 0;
+        while (b[j] != '\0') {
+            *(*(a + i)+j) = b[j];
+            j++;
+        }
+        *(*(a + i) + j) = b[j];
+    }
+    printf("\nSirurile scrise sunt:");
+    for (int i = 0; i < n; i++)
+    {
+
+        printf("\nSirul %i este:%s", i + 1, *(a + i));
+
+
+    }
+
+}

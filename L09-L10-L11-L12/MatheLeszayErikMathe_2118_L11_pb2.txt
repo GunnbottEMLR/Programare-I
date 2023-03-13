@@ -1,0 +1,54 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>
+void scan(int** mag) {
+	printf("\nCluj");
+	for (int i = 0; i < 3; i++)
+	{
+		printf("\n%i magazin:", i + 1);
+		scanf("%i", &(*(*(mag + 0) + i)));// arata frumos :))
+	}
+	printf("\nBucuresti");
+	for (int i = 0; i < 3; i++)
+	{
+		printf("\n%i magazin:", i + 1);
+		scanf("%i", &(*(*(mag + 1) + i)));
+	}
+	printf("\nConstanta");
+	for (int i = 0; i < 3; i++)
+	{
+		printf("\n%i magazin:", i + 1);
+		scanf("%i", &(*(*(mag + 2) + i)));
+	}
+
+}
+void vanzari(int** mag) {
+	*(*(mag + 0) + 0) = *(*(mag + 0) + 0) + *(*(mag + 0) + 1) + *(*(mag + 0) + 2);//ar fi trebuit sa iau alti 3 pointeri intregi dar ar fi luat mai mult spatiu din memorie si am zis sa fac asa ca oricum dupa face free la aceste rezultate deci nu conteaza 
+	*(*(mag + 1) + 0) = *(*(mag + 1) + 0) + *(*(mag + 1) + 1) + *(*(mag + 1) + 2);
+	*(*(mag + 2) + 0) = *(*(mag + 2) + 0) + *(*(mag + 2) + 1) + *(*(mag + 2) + 2);
+
+
+
+}
+void dealoc(int ** mag){
+	for (int i = 0; i < 5; i++)
+	{
+		free(*(mag + i));
+	}
+	
+}
+int main(void) {
+	int* mag[5];
+	
+	for (int i = 0; i < 5; i++) {
+
+
+		*(mag + i) = (int*)malloc(3 * sizeof(int));
+	}
+	scan(mag);
+	vanzari(mag);
+	printf("Total vanzari %i", *(*(mag + 0) + 0) + *(*(mag + 1) + 0) + *(*(mag + 2) + 0));
+	dealoc(mag);
+	
+
+}

@@ -1,0 +1,40 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int preia(int* a, int* b, int k1, int k2) {
+
+
+
+        printf("Elementele din primul tablou sunt\n");
+        for (int i = 0; i < k1; i++){
+                printf("%d element:", i);
+                scanf("%i", a + i); // &a[i] -> & *(a+i)
+        }
+        printf("Elementele din al dolea tablou sunt\n");
+        for (int j = 0; j < k2; j++) {
+                printf("%d element:", j);
+                scanf("%i", b + j); // &b[j] -> & *(b+j)
+        }
+
+
+}
+int calcul(int* a, int* b, int k1, int k2) {
+        int x=0;
+        while (x != k1) {
+                x = a[k1] * b[k1];
+                        k1--;
+        }
+        printf("Produsul vectorial este: %i", x)
+}
+void main() {
+        int k1, k2;
+        int tab1[100], tab2[100];
+        printf("Defniti dimeniunea celor doua tablouri unidimensionale");
+        scanf("%i", &k1);
+        k1 = k1 - 1;
+        k2 = k1;
+
+
+        preia(tab1, tab2, k1, k2);
+        calcul(tab1, tab2, k1, k2);
+
+}

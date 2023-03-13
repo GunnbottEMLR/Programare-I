@@ -1,0 +1,37 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+
+struct student {
+	char nume[50];
+	int varsta;
+};
+
+
+void afisare_structura_ca_valoare(struct student s) {
+	printf("Afisare structura ca valoare:\n");
+	printf("Nume: %s\n", s.nume);
+	printf("Varsta: %d\n", s.varsta);
+}
+
+
+void afisare_structura_prin_adresa(struct student* s) {
+	printf("Afisare structura prin adresa:\n");
+	printf("Nume: %s\n", s->nume);
+	printf("Varsta: %d\n", s->varsta);
+}
+
+int main() {
+	
+	struct student s;
+	printf("Introduceti numele studentului: ");
+	scanf("%s", s.nume);
+	printf("Introduceti varsta studentului: ");
+	scanf("%d", &s.varsta);
+
+	
+	afisare_structura_ca_valoare(s);
+	afisare_structura_prin_adresa(&s);
+
+	return 0;
+}
