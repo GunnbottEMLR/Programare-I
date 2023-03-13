@@ -1,0 +1,71 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+struct masina {
+    char Marca[20];
+    int an_productie;
+    int kilometri;
+    char avariat[1];
+};
+void diferenta(struct masina* s,int i) {
+    int largest = s[i].an_productie;
+    for (int j = 0; j <i; j++) {
+        if (s[j].an_productie > largest) {
+            largest = s[j].an_productie;
+        }
+    }
+    for (int j = 0; j < i;j++)
+    {
+        if ((largest - s[j].an_productie) >= 20) {
+            printf("DA este fireneta mai mare decat 20!");
+        }
+    }
+}
+void avariat(struct masina* s,int i) {
+    printf("Masinile avariate:");
+    for (int j = 0; j < i; j++)
+    {
+        if (strcmp(s[j].avariat, "DA") == 0) {
+            printf("\n%s", s[j].Marca);
+            printf("\n%i", s[j].an_productie);
+            printf("\n%i", s[j].kilometri);
+            printf("\n%s", s[j].avariat);
+        }
+
+
+    }
+    
+}
+int main() {
+    struct masina* s;
+    int n;
+    printf("Scrieti in ce an suntem: ");
+    scanf("%i", &n);
+
+    FILE* file = fopen("masinile.txt", "r");
+    int i = 0;
+    
+    s = (struct masina*)malloc(3 * sizeof(struct masina));
+    
+    while (fscanf(file, "%s %d %d %s", s[i].Marca, &s[i].an_productie, &s[i].kilometri, s[i].avariat) != EOF) {
+        i++;
+    }
+
+    diferenta(s,i);
+    avariat(s, i);
+    FILE* fp = fopen("vechi5ani.txt", "w");
+    for (int j = 0; j < i; j++)
+    {
+        if (s[j].an_productie < (n - 5)) {
+            
+           
+            fprintf(fp,"\n%s", s[j].Marca);
+        }
+    }
+    fclose(fp);
+    fclose(file);
+    free(s);
+
+    return 0;
+}
